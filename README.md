@@ -7,4 +7,5 @@ A simple timer Flutter project.
 - Set Round time
 - Set Rest time
 - set number of rounds
+  
 Save a Workout to your local storage using "Hive" database package
