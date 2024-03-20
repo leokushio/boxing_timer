@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //-------------------------------------------------rate my app
+  //-------------------------------------------------incorporating rate my app
   RateMyApp _rateMyApp = RateMyApp(
       preferencesPrefix: 'rateMyApp_',
       minDays: 1,
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
 
   T getCondition<T>() => _rateMyApp.conditions.whereType<T>().toList().first;
 
-  //--------------------------------------------------Add Baner
+  //--------------------------------------------------incorporating Add Baner
   final BannerAd myBanner = BannerAd(
     adUnitId: Platform.isAndroid
         ? 'ca-app-pub-3940256099942544/6300978111'
@@ -45,17 +45,6 @@ class _HomePageState extends State<HomePage> {
     myBanner.load();
 
     _rateMyApp.init().then((_) {
-      //--------------------------------reseting & testing ratemy app conditions
-      // print('init pass');
-      // _rateMyApp.reset();
-      // final minimumDays = getCondition<MinimumDaysCondition>();
-      // final minimumLaunches = getCondition<MinimumAppLaunchesCondition>();
-      // final doNotOpenAgain = getCondition<DoNotOpenAgainCondition>();
-      // final openRatingAgain = doNotOpenAgain.doNotOpenAgain;
-      // print(minimumDays.minDays);
-      // print(minimumLaunches.launches);
-      // print(openRatingAgain);
-      // print(_rateMyApp.shouldOpenDialog);
 
       if (_rateMyApp.shouldOpenDialog) {
         _rateMyApp.showStarRateDialog(
